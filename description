@@ -1,0 +1,13 @@
+Name: CatsInZFC
+Title: Category theory in ZFC
+Author: Carlos Simpson, carlos@math.unice.fr, http://math.unice.fr/~carlos/
+Institution:CNRS, Laboratoire J. A. Dieudonn\'e UMR 6621, Universit\'e de
+Nice-Sophia Antipolis, http://math.unice.fr/
+Date: October 10th 2004
+Description: In a ZFC-like environment augmented by reference to the
+ambient type theory, we develop some basic set theory, ordinals, cardinals
+and transfinite induction, and category theory including functors,
+natural transformations, limits and colimits, functor categories,
+and the theorem that functor_cat a b has (co)limits if b does.
+Keywords: set ordinal cardinal category functor natural
+transformation limit colimit functor category
