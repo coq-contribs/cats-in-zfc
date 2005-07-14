@@ -1805,7 +1805,7 @@ ap H3. ap chenille_next. am.
 ap leq_gen_def_from_scale. 
 sh (domain r); ee; try am. apply leq_gen_mapping_domain with g.
 am. uf u. ap chenille_leq_gen_scale. am. 
-set (t:= tack_on s (tandem f g s)). fold t in H2. 
+set (t:= tack_on s (tandem f g s)) in H2. 
 assert (inc (pair x (g (range s))) t). uf t;
 rw tack_on_inc; ap or_intror. uf tandem. 
 assert (x=f(domain s)).
