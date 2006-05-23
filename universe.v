@@ -105,8 +105,8 @@ Lemma inc_emptyset_u : forall u, axioms u ->
 inc emptyset u.
 Proof.
 ir. app inc_subset_u. sh nat. 
-ee. app inc_nat_u. uhg; ir. 
-cp (B H0). nin X0. 
+ee. app inc_nat_u. uhg; ir.
+cp (B H0). nin X0 || nin H1. 
 Qed. 
 
 Lemma inc_IM_u : forall x (f:x->E) u,

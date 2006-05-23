@@ -361,7 +361,7 @@ Implicit Arguments join [x f].
 
 Definition Z : E -> EP -> E.
 intros x p.
-pose (Rec (fun a : x => p (R a))).
+pose (T:=Rec (fun a : x => p (R a))).
 exact (IM (fun t : T => R (head t))).
 Defined.
 
@@ -582,7 +582,7 @@ cp (nat_realization_O H). elim H0.
 nin (B H).  
 Qed.
 
-Lemma false_emptyset : emptyset = False. 
+Lemma false_emptyset : emptyset = False :> Type. 
 Proof.
 ap extensionality; uhg; ir. 
 nin (B H). elim (B H). 
@@ -701,7 +701,7 @@ ir. assert (inc (singleton x) (pair z w)). rewrite <- H.
 unfold pair in |- *. ap doubleton_first. unfold pair in H0. pose (doubleton_or H0). 
 nin o. ap singleton_inj. am. assert (inc emptyset (singleton x)).
 rewrite H1. ap doubleton_first. assert (inc (singleton w) (singleton x)). 
-rewrite H1. ap doubleton_second. assert (emptyset = x). ap singleton_eq. am.
+rewrite H1. ap doubleton_second. assert (emptyset = x :> Type). ap singleton_eq. am.
 assert (singleton w = x). ap singleton_eq. am. assert (inc w emptyset).
 rewrite H4. rewrite <- H5. ap singleton_inc. pose (emptyset_empty H6). 
 elim f. Qed. 

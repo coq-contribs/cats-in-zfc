@@ -39,7 +39,7 @@ Qed.
 
 Lemma emptyset_ordinal : is_ordinal emptyset. 
 Proof.
-assert (emptyset = union emptyset).
+assert (emptyset = union emptyset :> E).
 ap extensionality; uhg; ir. elim (B H). 
 cp (union_exists H). nin H0. ee. 
 elim (B H1). rw H. ap ordinal_union; ir. 
