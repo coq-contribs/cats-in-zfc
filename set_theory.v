@@ -382,7 +382,7 @@ ir. unfold inc in H. nin H. unfold Z in x0.
 pose (R_inc x0). pose (IM_exists i). 
 nin e. pose (tail x1).
 
-rewrite H0 in p0. rewrite H0 in p0. 
+simpl in p0. rewrite H0 in p0. 
 rewrite <- H. am.
 Qed.
 
