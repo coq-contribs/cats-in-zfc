@@ -14,7 +14,7 @@
 (* 02110-1301 USA                                                     *)
 
 
-Require Export "tactics".
+Require Export tactics.
 
 Set Implicit Arguments.
 Unset Strict Implicit.

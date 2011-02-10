@@ -14,7 +14,7 @@
 (* 02110-1301 USA                                                     *)
 
 
-Require Export "set_theory".
+Require Export set_theory.
 
 Set Implicit Arguments.
 Unset Strict Implicit.

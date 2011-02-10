@@ -14,7 +14,7 @@
 (* 02110-1301 USA                                                     *)
 
 
-Require Export "axioms".
+Require Export axioms.
 
 Set Implicit Arguments.
 Unset Strict Implicit.
