@@ -448,7 +448,7 @@ nw. assert (like b). nw.
 uh H4; uh H5.
 wr H4; wr H5. 
 rw H1. rw H2. 
-uf create. up. uf ntrans_arrow_create. 
+uf create. (*up. uf ntrans_arrow_create. *)
 up. 
 app Function.create_extensionality. 
 ir. wri H1 H7. ap H3. 
