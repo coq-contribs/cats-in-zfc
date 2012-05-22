@@ -1223,7 +1223,7 @@ End Map.
 Module Bounded.
 
 Definition property (p : EP) (x : E) :=
-  forall y : E, (p y -> inc y x & inc y x -> p y). 
+  forall y : E, (p y -> inc y x) & (inc y x -> p y). 
 
 
 Definition axioms (p : EP) := ex (property p).
