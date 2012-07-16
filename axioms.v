@@ -16,6 +16,7 @@
 
 Set Implicit Arguments.
 Unset Strict Implicit.
+Global Set Asymmetric Patterns.
 
 Require Import Arith.
 

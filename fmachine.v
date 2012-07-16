@@ -16,6 +16,7 @@
 
 Set Implicit Arguments.
 Unset Strict Implicit.
+Set Asymmetric Patterns.
 
 Axiom iff_eq : forall (P Q : Prop),
 (P -> Q) -> (Q -> P) -> P = Q.
