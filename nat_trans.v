@@ -21,6 +21,7 @@ Require Import Arith.
 Require Export functor.
 
 Ltac nw := autorewrite with nw; try tv; try am. 
+Ltac nw' := repeat autorewrite with nw; try tv; try am. 
 
 Ltac nr := autorewrite with nw.
 Ltac fr := autorewrite with fw.
@@ -462,7 +463,7 @@ ir. ap axioms_extensionality.
 rww vcompose_axioms. nw. 
 rww vident_axioms. nw. nw. am. nw. nw. ir. 
 rwi osource_vcompose H0. 
-nw. cw. fw. nw. nw. nw. nw. 
+nw'. cw. fw. nw. nw. nw. nw. 
 Qed. 
 
 Lemma right_vident : forall a,
@@ -474,7 +475,7 @@ nw. rww vident_axioms. nw. nw. am. nw. nw. ir.
 rwi osource_vcompose H0. 
 rwi osource_vident H0. 
 rwi source_source H0. 
-nw. cw. fw. nw. nw. nw. nw. 
+nw'. cw. fw. nw. nw. nw. nw. 
 Qed. 
 
 Lemma weak_left_vident : forall a f,

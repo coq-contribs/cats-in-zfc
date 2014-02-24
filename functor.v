@@ -21,6 +21,7 @@ Require Import Arith.
 Require Export category.
 
 Ltac fw := autorewrite with fw; try tv; try am. 
+Ltac fw' := (repeat autorewrite with fw); try tv; try am. 
 
 Module Functor.
 Export Umorphism. 
@@ -305,7 +306,7 @@ source f = target g -> ob (source g) x ->
 fob (fcompose f g) x = fob f (fob g x).
 Proof.
 ir. uf fcompose. uf compose. rw fob_create. tv.
-fw. cw. fw.   fw. am. Qed.
+fw'. cw. fw.   fw. am. Qed.
 
 
 
@@ -431,7 +432,7 @@ ir; fw; try (rwi source_fidentity H1; cw).
 ir; fw; try (rwi source_fidentity H1; cw). 
 ir; fw; try (rwi source_fidentity H1; cw). 
 ir; fw; try (rwi source_fidentity H1; cw). 
-ir; fw; 
+ir; fw'; 
 try (rwi source_fidentity H1; cw);
 try (rwi source_fidentity H2; cw).
 Qed. 
@@ -444,9 +445,9 @@ fcompose (fidentity a) f = f.
 Proof.
 ir. rw H0; clear H0. 
 ap axioms_extensionality; ir. 
-fw. fw. fw. am. fw. fw. 
+fw'. am. fw. fw.
 rwi source_fcompose H0. 
-fw. fw. fw. 
+fw'.
 Qed. 
 
 Lemma right_fidentity : forall a f,
@@ -455,12 +456,9 @@ fcompose f (fidentity a) = f.
 Proof.
 ir. rw H0; clear H0. 
 ap axioms_extensionality; ir.
-fw. fw. fw. am. 
-rww source_fcompose. rww source_fidentity. 
-rww target_fcompose. 
+fw'. am. fw. fw.
 rwi source_fcompose H0. rwi source_fidentity H0. 
-fw. 
-fw. fw. fw. 
+fw'. 
 Qed. 
 
 Hint Rewrite left_fidentity right_fidentity : fw. 
