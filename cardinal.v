@@ -168,7 +168,7 @@ Lemma isomorphic_iso_sub : forall a b,
 are_isomorphic a b -> iso_sub a b.
 Proof.
 ir. rwi iso_trans_ex_rw H. nin H. 
-rw iso_sub_trans_rw. sh f; lu. 
+rw iso_sub_trans_rw. sh x; lu. 
 Qed. 
 
 Lemma iso_sub_trans : forall a c,
