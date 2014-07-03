@@ -348,14 +348,13 @@ Qed.
 
 
 Ltac LookUpErasing :=
-match goal with 
+lazymatch goal with 
 | id1 : ?X1 |- _ => 
-first [exact id1 | uh id1; ee; try tv; try am|clear id1 ]
+first [exact id1 | uh id1; ee; try tv; try am|clear id1]; LookUpErasing
 | _ => fail
 end. 
 
-Ltac lu := 
-LookUpErasing; lu. 
+Ltac lu := LookUpErasing.
 (*** not all that efficient for time so don't use too often ***)
 
 Ltac app u :=
