@@ -76,20 +76,20 @@ Ltac CompareTac a b :=
   assert (toclear : a = a); [ exact (refl_equal b) | clear toclear ].
 
 Ltac UnfoldHead1 h :=
-  match constr:h with
+  match constr:(h) with
   | (?X1 ?X2) => unfold X1 in h
   | _ => fail
   end.
 
 (*** we don't actually want to unfold certain things ***)
 Ltac Good_Unfold g h :=
-  match constr:g with
+  match constr:(g) with
   | inc => fail
   | _ => unfold g in h
   end.
 
 Ltac Unfold_Head_R g h :=
-  match constr:g with
+  match constr:(g) with
   | (?X1 _ _ _ _ _ _ _ _ _ _) => Good_Unfold X1 h
   | (?X1 _ _ _ _ _ _ _ _ _) => Good_Unfold X1 h
   | (?X1 _ _ _ _ _ _ _ _) => Good_Unfold X1 h
@@ -125,7 +125,7 @@ Definition TODO (A : Type) (a : A) := a.
 Ltac TodoAll :=
   match goal with
   | id1:?X1 |- _ =>
-      match constr:X1 with
+      match constr:(X1) with
       | (TODO _) => fail
       | _ => change (TODO X1) in id1; TodoAll
       end
@@ -217,13 +217,13 @@ Ltac xd := Expand.
 
 
 Ltac PreExplode n :=
-  match constr:n with
+  match constr:(n) with
   | 0 => idtac
   | (S ?X1) =>
       match goal with
       | id1:?X2 |- _ =>
           CheckPropTac X2;
-           match constr:X2 with
+           match constr:(X2) with
            | (DONE ?X3) => fail
            | _ =>
                assert (DONE X2);
