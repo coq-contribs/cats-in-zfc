@@ -923,7 +923,7 @@ solve
 [intros fty_u fty_v fty_h1; 
 nin fty_u; nin fty_v;
 try reflexivity; try (discriminate fty_h1)] | 
-solve [intro fty_x; 
+solve [let fty_x := fresh in intro fty_x; 
 nin fty_x; reflexivity] ]
 | |- _ => fail
 end. 
