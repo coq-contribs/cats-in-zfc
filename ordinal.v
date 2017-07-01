@@ -399,7 +399,7 @@ Definition obi x := create x sub.
 Lemma obi_U : forall x:E, (U (obi x)) = x.
 Proof.
 ir. uf obi. rw underlying_create; tv. 
-Save.
+Qed.
 
 Lemma obi_leq : forall x u v:E, 
 leq (obi x) u v = (inc u x & inc v x & sub u v).

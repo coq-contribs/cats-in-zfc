@@ -46,7 +46,7 @@ ap (H8 _ _ H3). pose (H4 _ _ H5 H6).
 nin o. am. pose (H2 _ _  H7). uh H0; ee; uh H0; ee. 
 assert (x = y). ap H11; am. rw H13. uh H; ee. 
 ap H. am.  
-Save. 
+Qed.
 
 Lemma scale_subset_or : forall a y z:E, scale_subset y a ->
 scale_subset z a -> (sub y z) \/ (sub z y).

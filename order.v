@@ -1352,12 +1352,12 @@ Qed.
 (*
 Lemma empty_scale_subset : (a:E)(is_well_ordered a) -> (scale_subset emptyset a).
 
-Save.
+Qed.
 
 Lemma scale_subset_intersection2 : (a,u,v:E)(scale_subset u a) -> (scale_subset v a) ->
 (scale_subset (intersection2 u v) a).
 
-Save.
+Qed.
 
 Definition is_scale_between := [a,b,f:E]
 (A (is_well_ordered a)
@@ -1370,21 +1370,21 @@ Definition is_scale_between := [a,b,f:E]
 Lemma scale_between_compose : (a,b,c,f,g:E)(is_scale_between a b f) -> (is_scale_between b c g) ->
 (is_scale_between a c (Umorphism.compose g f)).
 
-Save.
+Qed.
 
 Lemma scale_between_identity : (a,f:E)(is_scale_between a a f) -> f == (Umorphism.identity a).
 
-Save.
+Qed.
 
 Lemma scale_between_inverse : (a,b,f,g:E)(is_scale_between a b f) -> (is_scale_between b a g) ->
 (Umorphism.are_inverse f g).
 
-Save. 
+Qed.
 
 Lemma scale_between_surjective_inverse : (a,b,f:E)(is_scale_between a b f) ->
 (Umorphism.surjective f) -> (is_scale_between b a (Umorphism.inverse f)).
 
-Save. 
+Qed.
 
 Definition ordinal_leq := [a,b:E]
 (exists [f:E](is_scale_between a b f)).
@@ -1392,26 +1392,26 @@ Definition ordinal_leq := [a,b:E]
 
 Lemma ordinal_leq_refl : (a:E)(is_well_ordered a) -> (ordinal_leq a a).
 
-Save.
+Qed.
 
 Lemma ordinal_leq_trans : (a,b,c:E)(ordinal_leq a b) -> (ordinal_leq b c) -> (ordinal_leq a c).
 
-Save. 
+Qed.
 
 Definition same_ordinal := [a,b:E]
 (A (ordinal_leq a b) (ordinal_leq b a)).
 
 Lemma same_ordinal_refl : (a:E)(is_well_ordered a) -> (same_ordinal a a).
 
-Save.
+Qed.
 
 Lemma same_ordinal_symm : (a,b:E)(same_ordinal a b) -> (same_ordinal b a).
 
-Save.
+Qed.
 
 Lemma same_ordinal_trans : (a,b,c:E)(same_ordinal a b) -> (same_ordinal b c) -> (same_ordinal a c).
 
-Save. 
+Qed.
 
 Definition correspond := [a,b,x,y:E]
 (A (is_well_ordered a)
@@ -1427,48 +1427,48 @@ Definition has_correspondant := [a,b,x:E](exists [y:E](correspond a b x y)).
 
 Lemma correspond_symm : (a,b,x,y:E)(correspond a b x y) -> (correspond b a y x).
 
-Save.
+Qed.
 
 Lemma correspond_refl : (a,x:E)(is_well_ordered a) -> (inc x (U a)) -> (correspond a a x x).
 
-Save.
+Qed.
 
 Lemma correspond_trans : (a,b,c,x,y,z:E)(correspond a b x y) -> (correspond b c y z) ->
 (correspond a c x z).
 
-Save. 
+Qed.
 
 Lemma corresponding_unique : (a,b,x,y:E)(correspond a b x y) -> (corresponding a b x) == y.
 
-Save. 
+Qed.
 
 
 Lemma scale_correspond : (a,b,f,x:E)(is_scale_between a b f) -> (inc x (U a)) ->
 (correspond a b x (ev f x)).
 
-Save.
+Qed.
 
 Lemma has_correspondant_leq : (a,b,x,u:E)(has_correspondant a b x) -> (leq a u x) ->
 (has_correspondant a b u).
 
-Save. 
+Qed.
 
 Lemma has_correspondant_scale_subset : (a,b:E)(is_well_ordered a) -> (is_well_ordered b) ->
 (scale_subset (Z (U a) [x:E](has_correspondant a b x)) a).
 
-Save. 
+Qed.
 
 
 Lemma have_correspondants_disj : (a,b:E)(is_well_ordered a) -> (is_well_ordered b) -> 
 ((x:E)(inc x (U a)) -> (has_correspondant a b x)) \/
 ((y:E)(inc y (U b)) -> (has_correspondant b a y)).
 
-Save.
+Qed.
 
 Lemma ordinal_leq_disj : (a,b:E)(is_well_ordered a) -> (is_well_ordered b) ->
 (ordinal_leq a b) \/ (ordinal_leq b a).
 
-Save.
+Qed.
 
 
 *)
