@@ -357,7 +357,7 @@ ir. ap Y_if_not; try am; try tv.
 Qed. 
 
 Record Rec (x : E) (f : x -> E) : E := join {head : x; tail : f head}.
-Implicit Arguments join [x f].
+Arguments join [x f].
 
 Definition Z : E -> EP -> E.
 intros x p.
